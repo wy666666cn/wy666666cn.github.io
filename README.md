@@ -1,110 +1,135 @@
-# GitHub 个人网页
+# ZYYO主页PHP后台版本
+ 
+- 支持对图标、项目、分类、主题样式、标签、描述、左侧信息进行增删改查。  
+- 方便编辑名称、图标、点击.js事件等。  
+- 可控制贪吃蛇、侧边栏、技能的开关。  
+- 支持后台**多主题切换**，细致修改所有主题细节。  
 
-这是一个美观、现代化的GitHub个人网页模板，能够展示您的GitHub头像、个人信息、项目和技能。这个页面使用纯HTML、CSS和JavaScript构建，无需复杂的构建工具。
+>一个增值版本，如果你觉得自己不需要完全可以使用免费开源的html版本
+>如果需要，请小小赞助一下作者
+>售价：20元 
 
-## 功能特点
 
-- 📸 **GitHub头像展示** - 自动获取并显示您的GitHub头像
-- 📝 **个人信息** - 显示您的用户名、简介和统计数据（仓库数、粉丝数、关注数）
-- 📚 **项目展示** - 展示您的GitHub仓库，包括描述、语言、星标数和分叉数
-- 🛠️ **技能展示** - 展示您的技术技能水平
-- 📱 **响应式设计** - 适配各种屏幕尺寸，从手机到桌面电脑
-- ✨ **动画效果** - 平滑滚动、淡入动画等增强用户体验的效果
-- 🎨 **现代UI设计** - 使用Bootstrap和自定义CSS构建的美观界面
+>**演示站**：[https://zyyo.cc](https://zyyo.cc)  
+>**后台**：[https://zyyo.cc/admin](https://zyyo.cc/admin)  
+>**账号**：admin  
+>**密码**：123456  
 
-## 快速开始
+## 联系作者
+> QQ：3509679579  
+> QQ交流群：560938976  
 
-1. 克隆或下载本仓库到您的本地计算机
+![主页截图](https://zyyo.net/usr/picture/homepage.png)  
 
-2. 修改`script.js`文件中的GitHub用户名配置：
-   ```javascript
-   const config = {
-       // 在此处输入您的GitHub用户名
-       githubUsername: "您的GitHub用户名",
-       // 是否使用模拟数据（如果API请求受限）
-       useMockData: false
-   };
-   ```
+---
 
-3. 启动本地服务器来预览页面：
-   - 方法1：使用Python（如果已安装）
-     ```bash
-     python -m http.server 8000
-     ```
-   - 方法2：使用Node.js的http-server（如果已安装）
-     ```bash
-     npm install -g http-server
-     http-server
-     ```
-   - 方法3：使用提供的PowerShell脚本（Windows系统）
-     ```powershell
-     powershell.exe -ExecutionPolicy Bypass -File start-server.ps1
-     ```
+## 📚缘由 
 
-4. 打开浏览器，访问 `http://localhost:8000` 查看效果
+受到 **xhofe** 和 **ddiu** 个人主页的灵感启发，感谢两位大佬！  
 
-## 自定义选项
+- 初版花费了几个小时，页面虽然简单，但后续花了大量时间进行优化。  
+- 我有强迫症，特别注重细节，每个小细节都耗费了很多心力。  
 
-### 修改GitHub用户名
+> 喜欢可以赞助，不喜欢可以直接离开。
 
-您可以通过以下两种方式修改GitHub用户名：
+---
 
-1. 直接编辑`script.js`文件中的`githubUsername`配置项
-2. 在页面底部的配置面板中输入新的用户名并点击"应用"按钮
+## ✨特色 
 
-### 自定义样式
+- **白天/黑夜模式**  
+- **5套白天主题**  
+- 支持**背景整体模糊**和**卡片模糊**，可通过 CSS 切换。  
+- 使用**原生 HTML、CSS、JS**，未使用框架或插件。  
 
-- 修改`styles.css`文件来自定义页面的外观和样式
-- 您可以更改颜色、字体、布局等各个方面
+**GitHub**：[https://github.com/ZYYO666/homepage](https://github.com/ZYYO666/homepage)  
+**QQ群下载**：560938976  
 
-### 更新技能信息
+**后续计划**：  
+- 增加主页时钟  
+- 增加主页音乐播放器  
+- 完善 PHP 管理后台  
 
-- 在`index.html`文件中找到技能部分，修改技能名称和百分比
-- 示例：
-  ```html
-  <div class="skill-bar mb-4">
-      <div class="skill-info d-flex justify-content-between mb-1">
-          <span>JavaScript</span>
-          <span>90%</span>
-      </div>
-      <div class="progress">
-          <div class="progress-bar" style="width: 90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-  </div>
+---
+
+## 🛠️更新日志
+
+1.6更新(2024.09.05)
+- 增加 `docker-compose` 一键部署。  
+- 自行安装 `docker` 和 `docker-compose`。  
+- 修改 `Caddyfile` 配置中的域名，然后运行：  
+  ```bash
+  docker compose up -d
   ```
+- 自动配置 SSL 证书，并开启 HTTPS。
 
-## GitHub API 限制
+> 贡献者：[starry](https://github.com/sky22333)
 
-请注意，GitHub API有请求限制（每小时60个请求），如果超过限制，页面将自动切换到使用模拟数据。如果您需要更多的请求配额，可以考虑使用GitHub API令牌。
+1.5 更新 (2024.05.14)
 
-## 部署到GitHub Pages
+- 修复 iOS 浏览器背景模糊问题。
+- 修复黑夜模式切换时的卡顿。
+- 优化不同屏幕下的字体显示。
+- 优化大量细节。
 
-要将这个页面部署到GitHub Pages：
+1.4 更新
 
-1. 将所有文件提交到您的GitHub仓库
-2. 前往仓库的"Settings" > "Pages" > "Build and deployment"
-3. 在"Source"下选择"Deploy from a branch"
-4. 选择您的主分支（通常是`main`或`master`）
-5. 点击"Save"，等待几分钟，GitHub Pages会自动为您部署页面
+- 所有图片替换为字体图标。
+- 去除鼠标样式。
+- 修改所有路径为相对路径。
+- 细节优化，修复其他问题。
 
-## 技术栈
+1.3 更新
 
-- HTML5
-- CSS3 (使用Bootstrap 5)
+- 优化加载动画。
+- 增加点击气泡动画。
+- 增加 5 套亮色主题，使用 CSS 变量控制，完全去除 JS 依赖。
+- 取消前台多主题切换，仅保留暗夜模式切换。
+- 支持背景整体模糊和卡片模糊。
+- 优化动效，去除无用效果。
+- 桌面端：一行显示 4 个项目。
+- 移动端：支持一行两个和一行一个布局。
+
+1.2 更新
+
+- 新增侧边栏，支持移动端弹出。
+- 去除白色主题。
+- 优化动效，减少卡顿。
+
+1.0 初版
+
+- 支持白天/黑夜模式切换。
+- 提供三套主题。
+- 支持前台一键切换。
+
+💻 使用
+
+- 下载并解压。
+- 主要文件：
+- /static/root.css：主题样式文件。
+- /static/style.css：样式文件，可修改字体。
+- /static/img/favicon.ico：网页图标和头像。
+- /static/script.js：JS 功能文件。
+
+🧠 技术栈
+
+- HTML
+- CSS
 - JavaScript
-- Font Awesome 图标
 
-## 许可证
+🙏 鸣谢
+- **iconfont** 图标库。
 
-本项目采用MIT许可证 - 查看[LICENSE](LICENSE)文件了解更多详情
+📌 备注
 
-## 致谢
+- 页面图标均为SVG，可自行替换。
+- - 替换 SVG 时需去除宽高信息和fill 信息，才能正常使用。
 
-- 感谢Bootstrap提供的响应式UI框架
-- 感谢Font Awesome提供的图标库
-- 感谢GitHub API提供的用户数据
+> skills 图标：[skill-icons](https://github.com/tandpfun/skill-icons) 这个开源项目
 
-## 注意事项
 
-- 联系表单目前仅作为前端示例，不连接到实际的后端服务
-- 如果您想使联系表单功能生效，需要自行添加后端代码来处理表单提交
+
+- ## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ZYYO666/homepage&type=Date)](https://star-history.com/#ZYYO666/homepage&Date)
+
+
